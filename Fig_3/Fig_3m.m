@@ -95,8 +95,8 @@ for SNR_counter=1:size(SNR_vec,2)
         W_N_S_Lin = (N_patterns-a)'*x_t_input/(M*a*(1-a));
         W_N_S_Lout = (N_patterns-a)'*y_t_output/(M*a*(1-a));
         % Student to notebook weights
-        W_S_N_Lin = x_t_input'*(N_patterns-a)/(M*a*(1-a));
-        W_S_N_Lout = y_t_output'*(N_patterns-a)/(M*a*(1-a));
+        W_S_N_Lin = x_t_input'*(N_patterns-a);
+        W_S_N_Lout = y_t_output'*(N_patterns-a);
         
         %% Student Network
         W_s = normrnd(0,variance_s^0.5,[N_x_s,N_y_s]); % set student's initial weights
